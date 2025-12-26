@@ -1,0 +1,7 @@
+{
+  "name": "Sercoin Ltda - Industrial Engineering Excellence",
+  "description": "A modern, high-performance web application for Sercoin Ltda, featuring industrial service showcases, project galleries, and an AI-powered engineering assistant.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
