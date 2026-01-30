@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from './logo-02.webp';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,17 +22,17 @@ const Navbar: React.FC = () => {
     { name: 'Inicio', href: '/' },
     { name: 'Nosotros', href: '/nosotros' },
     { name: 'Servicios', href: '/servicios' },
-    { name: 'Clientes', href: '/clientes' },
     { name: 'Proyectos', href: '/proyectos' },
-    { name: 'Contacto', href: '/contacto' },
+    { name: 'Productos', href: '/productos' },
+    { name: 'Clientes', href: '/clientes' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${shouldShowScrolledStyle ? 'bg-white/90 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <img src="/components/logo-02.webp" alt="Sercoin Ltda Logo" className="h-10 w-auto" />
-          <span className={`text-2xl font-black tracking-tight ${shouldShowScrolledStyle ? 'text-[#282828]' : 'text-white'}`}>SERCOIN <span className="text-[#F25733]">LTDA</span></span>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${shouldShowScrolledStyle ? 'bg-slate-900/85 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
+      <div className="container mx-auto px-2 sm:px-4 flex justify-between items-center min-h-[64px]">
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <img src={logo} alt="Sercoin Ltda Logo" className="h-14 sm:h-16 w-auto drop-shadow-[0_0_10px_rgba(0,0,0,0.35)]" />
+          <span className="text-xl sm:text-2xl font-black tracking-tight text-[#F25733]">SERCOIN LTDA</span>
         </div>
 
         {/* Desktop Menu */}
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               to={link.href}
-              className={`font-medium transition-colors hover:text-[#F06E4E] ${shouldShowScrolledStyle ? 'text-[#7A7A7A]' : 'text-white'}`}
+              className="font-medium transition-colors text-white hover:text-[#F06E4E]"
             >
               {link.name}
             </Link>
@@ -49,16 +50,17 @@ const Navbar: React.FC = () => {
             to="/contacto"
             className="bg-[#F25733] hover:bg-[#F06E4E] text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 active:scale-95 shadow-md"
           >
-            Cotizar Proyecto
+            Contáctenos
           </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-[#282828]"
+          className="md:hidden text-white ml-4"
+          style={{ padding: '8px' }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <svg className={`w-8 h-8 ${shouldShowScrolledStyle ? 'text-[#282828]' : 'text-white'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isMobileMenuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -70,12 +72,12 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-xl border-t border-slate-100 p-4 flex flex-col space-y-4">
+        <div className="md:hidden bg-slate-900/90 backdrop-blur-md absolute top-full left-0 w-full shadow-xl border-t border-white/10 p-6 flex flex-col space-y-4">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
-              className="text-[#7A7A7A] font-semibold text-lg py-2"
+              className="text-white font-semibold text-lg py-2 hover:text-[#F06E4E]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
