@@ -60,8 +60,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/10 text-center text-[#7A7A7A] text-sm">
+        <div className="pt-10 border-t border-white/10 text-center text-[#7A7A7A] text-sm space-y-1">
           <p>© {new Date().getFullYear()} Sercoin Ltda. Todos los derechos reservados. Diseñado para la excelencia industrial.</p>
+          <p>Desarrollado por Rodrigo Palma (Dev).</p>
         </div>
       </div>
     </footer>

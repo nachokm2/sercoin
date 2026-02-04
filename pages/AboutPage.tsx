@@ -46,16 +46,19 @@ const AboutPage: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <section className="py-16 sm:py-20 bg-[#F9F9F9]">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold text-[#282828] mb-4 pt-16 sm:pt-20">SERCOIN LTDA</h1>
-              <div className="w-24 h-1 bg-[#F25733] mx-auto rounded-full"></div>
-              <p className="mt-6 text-lg text-[#7A7A7A] max-w-4xl mx-auto">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#0b1221] via-[#10192c] to-[#0b1221] py-16 sm:py-20 md:py-24">
+          <div className="relative flex items-start justify-center">
+            <div className="text-center text-white px-4 py-6 sm:py-8 max-w-4xl">
+              <h1 className="text-4xl sm:text-5xl font-bold mb-4 drop-shadow-lg">SERCOIN LTDA</h1>
+              <div className="w-24 h-1 bg-[#F25733] mx-auto rounded-full mb-6" />
+              <p className="text-lg sm:text-xl text-slate-100 drop-shadow">
                 Servicios Comerciales e Industriales Limitada (SERCOIN LTDA) es una empresa chilena con amplia experiencia en fabricación, ingeniería, mantención y montajes industriales, orientada a la gran minería, la industria y la construcción.
               </p>
             </div>
-
+          </div>
+        </section>
+        <section className="py-16 sm:py-20 bg-[#F9F9F9]">
+          <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8">
                 <h3 className="text-2xl font-bold text-[#282828] mb-3">Misión</h3>
